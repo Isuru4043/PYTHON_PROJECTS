@@ -22,6 +22,8 @@ class TicTacToe:
     def make_move(self, square, letter):
         if self.board[square] == ' ':
             self.board[square] = letter
+            return True
+        return False
 
     def num_of_emptySquares(self):
         return self.board.count(' ')
@@ -38,3 +40,13 @@ def play(game, x_player, O_player, print_game=True):
             square = O_player.get_move(game)
         else:
             square = x_player.get_move(game)
+
+        if game.make_move(square , letter):
+            if print_game:
+                print(letter +  f'make a move gto square {square}')
+                game.print_board()
+                print('')
+
+            letter = 'O' if letter == 'X' else 'X'
+
+
