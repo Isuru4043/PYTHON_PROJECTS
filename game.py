@@ -56,4 +56,6 @@ def play(game, x_player, O_player, print_game=True):
 
             letter = 'O' if letter == 'X' else 'X'
 
+    print('It s a tie')
+
 
